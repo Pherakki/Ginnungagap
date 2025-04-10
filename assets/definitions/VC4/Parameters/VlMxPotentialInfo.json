@@ -1,0 +1,24 @@
+{
+    "struct":
+    [
+        {
+            "unknown_0x00"   : "<int32",
+            "unknown_0x04"   : "<int32",
+            "unknown_0x08"   : "<sjis_string",
+            "unknown_0x10"   : "<sjis_string",
+            "unknown_0x18"   : "<sjis_string",
+            "unknown_0x20"   : "<uint32",
+            "unknown_0x24"   : "<int32",
+            "unknown_0x28"   : "<int32",
+            "unknown_0x2C"   : "<int32",
+            "unknown_0x30"   : "<int32",
+            "unknown_0x34"   : "<int32",
+            "unknown_0x38"   : "<int32",
+            "unknown_0x3C"   : "<float32",
+            "unknown_0x40"   : "<float32",
+            "unknown_0x44"   : "<int32",
+            "unknown_0x48"   : "<int32",
+            "unknown_0x4C"   : "<int32"
+        }
+    ]
+}

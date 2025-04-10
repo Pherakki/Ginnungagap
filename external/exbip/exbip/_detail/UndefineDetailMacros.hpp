@@ -1,0 +1,6 @@
+#pragma once
+
+
+#undef EXBIP_NAMESPACE
+#undef BEGIN_EXBIP_NAMESPACE
+#undef END_EXBIP_NAMESPACE

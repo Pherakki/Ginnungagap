@@ -1,0 +1,10 @@
+{
+    "SubEntities": 
+    [
+        "SlgMapObject"
+    ],
+    "Parameters":
+    [
+        ["パラメータ", "SlgEnWeatherParam"]
+    ]
+}

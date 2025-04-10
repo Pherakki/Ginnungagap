@@ -1,0 +1,20 @@
+{
+    "struct":
+    [
+        {
+            "model"          : "<asset",
+            "textures"       : "<asset",
+            "unknown asset"  : "<asset",
+            "unknown_0x18"   : "<float32",
+            "unknown_0x1C"   : "<int32",
+            "unknown_0x20"   : "<int32",
+            "unknown_0x24"   : "<int32"
+        }
+    ],
+    "assets":
+    {
+        "model"          : "hmd",
+        "textures"       : "htx",
+        "unknown asset"  : "???"
+    }
+}

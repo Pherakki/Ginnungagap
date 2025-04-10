@@ -1,0 +1,34 @@
+{
+    "struct":
+    [
+        {
+            "unknown_0x00"   : "<int32",
+            "unknown_0x04"   : "<int32",
+            "unknown_0x08"   : "<int32",
+            "unknown_0x0C"   : "<int32",
+            "physics"        : "<asset",
+            "unknown asset 0x18" : "<asset",
+            "unknown asset 0x20" : "<asset",
+            "model pack"     : "<asset",
+            "model pack 2"   : "<asset",
+            "model pack 3"   : "<asset",
+            "unknown asset 0x40" : "<asset",
+            "model pack 4"   : "<asset",
+            "unknown asset 0x50" : "<asset",
+            "unknown_0x58"   : "<int32",
+            "unknown_0x5C"   : "<int32"
+        }
+    ],
+    "assets":
+    {
+        "physics": "mcl",
+        "unknown asset 0x18": "???",
+        "unknown asset 0x20": "???",
+        "model pack": "mlx",
+        "model pack 2": "mlx",
+        "model pack 3": "mlx",
+        "unknown asset 0x40": "???",
+        "model pack 4": "mlx",
+        "unknown asset 0x50": "???"
+    }
+}

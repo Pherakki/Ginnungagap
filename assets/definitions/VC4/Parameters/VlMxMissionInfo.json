@@ -1,0 +1,42 @@
+{
+    "struct":
+    [
+        {
+            "unknown_0x00"   : "<int16",
+            "unknown_0x02"   : "<int16",
+            "unknown_0x04"   : "<int32",
+            "unknown_0x08"   : "<int32",
+            "unknown_0x0C"   : "<int32",
+            "unknown_0x10"   : "<int32",
+            "unknown_0x14"   : "<int32",
+            "unknown_0x18"   : "<int32",
+            "unknown_0x1C"   : "<int32",
+            "unknown_0x20"   : "<float32",
+            "unknown_0x24"   : "<float32",
+            "unknown_0x28"   : "<float32",
+            "unknown_0x2C"   : "<float32",
+            "unknown_0x30"   : "<float32",
+            "unknown_0x34"   : "<float32",
+            "unknown_0x38"   : "<float32",
+            "unknown_0x3C"   : "<float32",
+            "unknown_0x40"   : "<int32",
+            "unknown_0x44"   : "<int32",
+            "unknown_0x48"   : "<sjis_string",
+            "model"          : "<asset",
+            "textures"       : "<asset",
+            "unknown asset 0x60"   : "<asset",
+            "unknown_0x68"   : "<float32",
+            "unknown_0x6C"   : "<float32",
+            "unknown_0x70"   : "<float32",
+            "unknown_0x74"   : "<int32",
+            "unknown_0x78"   : "<int32",
+            "unknown_0x7C"   : "<int32"
+        }
+    ],
+    "assets":
+    {
+        "model"    : "hmd",
+        "textures" : "htx",
+        "unknown asset 0x60" : "???"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "struct":
+    [
+        {
+            "htf"          : "<asset",
+            "htr"          : "<asset",
+            "unknown_0x10" : "<pad64",
+            "unknown_0x18" : "<pad64"
+        }
+    ],
+    "assets":
+    {
+        "htf": "htf",
+        "htr": "htr"
+    }
+}

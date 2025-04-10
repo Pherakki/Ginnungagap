@@ -1,0 +1,41 @@
+{
+    "struct":
+    [
+        {
+            "unknown_0x00"   : "<int16",
+            "unknown_0x02"   : "<int16",
+            "unknown_0x04"   : "<int16",
+            "unknown_0x06"   : "<int16",
+            "unknown_0x08"   : "<int16",
+            "unknown_0x0A"   : "<int16",
+            "unknown_0x0C"   : "<int16",
+            "unknown_0x0E"   : "<int16",
+            "unknown_0x10"   : "<int16",
+            "unknown_0x12"   : "<int16",
+            "unknown_0x14"   : "<int16",
+            "unknown_0x16"   : "<int16",
+            "unknown_0x18"   : "<int16",
+            "unknown_0x1A"   : "<int16",
+            "unknown_0x1C"   : "<int16",
+            "unknown_0x1E"   : "<int16",
+            "unknown_0x20"   : "<int16",
+            "unknown_0x22"   : "<int16",
+            "unknown_0x24"   : "<int16",
+            "unknown_0x26"   : "<int16",
+            "unknown_0x28"   : "<int16",
+            "unknown_0x2A"   : "<int16",
+            "unknown_0x2C"   : "<int16",
+            "unknown_0x2E"   : "<int16",
+            "unknown_0x30"   : "<int16",
+            "unknown_0x32"   : "<int16",
+            "unknown_0x34"   : "<int16",
+            "unknown_0x36"   : "<int16",
+            "unknown_0x38"   : "<int16",
+            "unknown_0x3A"   : "<int16",
+            "unknown_0x3C"   : "<int16",
+            "unknown_0x3E"   : "<int16",
+            "unknown_0x40"   : "<int16",
+            "unknown_0x42"   : "<int16"
+        }
+    ]
+}

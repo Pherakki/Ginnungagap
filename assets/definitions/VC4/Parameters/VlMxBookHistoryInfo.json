@@ -1,0 +1,13 @@
+{
+    "struct":
+    [
+        {
+            "id"          : "<uint32",
+            "unknown_0x04": "<uint32",
+            "unknown_0x08": "<sjis_string",
+            "unknown_0x10": "<sjis_string",
+            "unknown_0x18": "<int32",
+            "unknown_0x1C": "<int32"
+        }
+    ]
+}

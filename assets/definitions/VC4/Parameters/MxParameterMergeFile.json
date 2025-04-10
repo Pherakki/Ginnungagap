@@ -1,0 +1,16 @@
+{
+    "struct":
+    [
+        {
+            "mmf"         : "<asset",
+            "mmr"         : "<asset",
+            "padding_0x10": "<pad64",
+            "padding_0x18": "<pad64"
+        }
+    ],
+    "assets":
+    {
+        "mmf": "mmf",
+        "mmr": "mmr"
+    }
+}

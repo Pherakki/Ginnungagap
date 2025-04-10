@@ -1,0 +1,48 @@
+{
+    "struct":
+    [
+        {
+            "unknown_0x00"   : "<int32",
+            "unknown_0x04"   : "<int32",
+            "unknown_0x08"   : "<int32",
+            "unknown_0x0C"   : "<float32",
+            "Pos x"          : "<float32",
+            "Pos y"          : "<float32",
+            "Pos z"          : "<float32",
+            "Pos w"          : "<float32",
+            "Rot x"          : "<float32",
+            "Rot y"          : "<float32",
+            "Rot z"          : "<float32",
+            "Rot w"          : "<float32",
+            "Scale x"        : "<float32",
+            "Scale y"        : "<float32",
+            "Scale z"        : "<float32",
+            "Scale w"        : "<float32",
+            "model"          : "<asset",
+            "textures"       : "<asset",
+            "animation"      : "<asset",
+            "material anim"  : "<asset",
+            "unknown_0x60"   : "<int32",
+            "unknown_0x64"   : "<int32",
+            "cvd"            : "<asset",
+            "model 2"        : "<asset",
+            "unknown_0x78"   : "<int32",
+            "unknown_0x7C"   : "<float32"
+        }
+    ],
+    "assets":
+    {
+        "model"          : "hmd",
+        "textures"       : "htx",
+        "animation"      : "hmt",
+        "material anim"  : "hmm",
+        "cvd"            : "cvd",
+        "model 2"        : "hmd"
+    },
+    "roles":
+    {
+        "position": ["Pos x", "Pos y", "Pos z"],
+        "rotation": ["Rot x", "Rot y", "Rot z"],
+        "scale":    ["Scale x", "Scale y", "Scale z"]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "struct":
+    [
+        {
+            "unknown_0x00"   : "<int32",
+            "unknown_0x04"   : "<int32",
+            "unknown_0x08"   : "<int32",
+            "unknown_0x0C"   : "<int32",
+            "model pack"     : "<asset",
+            "model pack 2"   : "<asset",
+            "model pack 3"   : "<asset",
+            "model pack 4"   : "<asset"
+        }
+    ]
+}

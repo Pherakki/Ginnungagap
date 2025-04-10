@@ -1,0 +1,12 @@
+{
+    "SubEntities": 
+    [
+        "AISlgUnitMxParamSolver", 
+        "VlMapObjectOne", 
+        "SlgMapObject"
+    ],
+    "Parameters":
+    [
+        ["obj_param_", "SlgEnAirbornePointParam"]
+    ]
+}

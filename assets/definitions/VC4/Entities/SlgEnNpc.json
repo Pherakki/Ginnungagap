@@ -1,0 +1,11 @@
+{
+    "SubEntities": 
+    [
+    	"VlMapObjectOne",
+    	"SlgMapObject"
+    ],
+    "Parameters":
+    [
+        ["npc_param_", "SlgEnNpcParam"]
+    ]
+}

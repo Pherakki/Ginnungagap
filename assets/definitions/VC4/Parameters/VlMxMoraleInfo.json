@@ -1,0 +1,18 @@
+{
+    "struct":
+    [
+        {
+            "unknown_0x00"   : "<float32",
+            "unknown_0x04"   : "<float32",
+            "unknown_0x08"   : "<float32",
+            "unknown_0x0C"   : "<float32",
+            "unknown_0x10"   : "<float32",
+            "unknown_0x14"   : "<int16",
+            "unknown_0x16"   : "<int16",
+            "unknown_0x18"   : "<int16",
+            "unknown_0x1A"   : "<int16",
+            "unknown_0x1C"   : "<int16",
+            "unknown_0x1E"   : "<int16"
+        }
+    ]
+}

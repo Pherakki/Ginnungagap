@@ -1,0 +1,65 @@
+{
+    "struct":
+    [
+        {
+            "unknown_0x00"   : "<int32",
+            "unknown_0x04"   : "<int32",
+            "unknown_0x08"   : "<int32",
+            "unknown_0x0C"   : "<float32",
+            "Pos x"          : "<float32",
+            "Pos y"          : "<float32",
+            "Pos z"          : "<float32",
+            "Pos w"          : "<float32",
+            "Rot x"          : "<float32",
+            "Rot y"          : "<float32",
+            "Rot z"          : "<float32",
+            "Rot w"          : "<float32",
+            "Scale x"        : "<float32",
+            "Scale y"        : "<float32",
+            "Scale z"        : "<float32",
+            "Scale w"        : "<float32",
+            "model"          : "<asset",
+            "textures"       : "<asset",
+            "animation"      : "<asset",
+            "material anim"  : "<asset",
+            "physics"        : "<asset",
+            "animation 2"    : "<asset",
+            "animation 3"    : "<asset",
+            "cvd"            : "<asset",
+            "model 2"        : "<asset",
+            "textures 2"     : "<asset",
+            "animation 4"    : "<asset",
+            "animation 5"    : "<asset",
+            "cvd 2"          : "<asset",
+            "Team"           : "<int32",
+            "path ID"        : "<int32",
+            "unknown_0xB0"   : "<int32",
+            "unknown_0xB4"   : "<int32",
+            "unknown_0xB8"   : "<int32",
+            "unknown_0xBC"   : "<int32"
+        }
+    ],
+    "assets":
+    {
+        "model"          : "hmd",
+        "textures"       : "htx",
+        "animation"      : "hmt",
+        "material anim"  : "hmm",
+        "physics"        : "mcl",
+        "animation 2"    : "hmt",
+        "animation 3"    : "hmt",
+        "cvd"            : "cvd",
+        "model 2"        : "hmd",
+        "textures 2"     : "htx",
+        "animation 4"    : "hmt",
+        "animation 5"    : "hmt",
+        "cvd 2"          : "cvd"
+    },
+    "roles":
+    {
+        "position": ["Pos x", "Pos y", "Pos z"],
+        "rotation": ["Rot x", "Rot y", "Rot z"],
+        "scale":    ["Scale x", "Scale y", "Scale z"],
+        "team":     "Team"
+    }
+}
