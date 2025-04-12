@@ -5,11 +5,13 @@
 #include <fstream>
 #include <GinnungagapCore/utils/Paths.hpp>
 
-static void dumpParamData(std::ofstream& stream, const ParameterSet::Parameters& dataset, const MXEParameterSetGroupDefinition& pdef, uint32_t ID, const std::string& data_name, uint32_t size)
+static void dumpParamData(std::ofstream& stream, const ParameterSet::Parameters& dataset, const MXEParameterSetGroupDefinition& pdef, uint32_t ID, const std::string& data_name, const std::string& type_name, uint32_t size)
 {
     stream << ID;
     if (!data_name.empty())
         stream << ",\"" << stringmanip::sjisToUtf8(data_name) << "\"";
+    if (!type_name.empty())
+        stream << ",\"" << stringmanip::sjisToUtf8(type_name) << "\"";
     if (pdef.hasMultipleDefinitions())
         stream << "," << size;
     
@@ -166,7 +168,7 @@ static void dumpParamsCSV(const std::filesystem::path& fpath, const MXEParameter
     // Write header
     stream << idname;
     if (!param_name.empty())
-        stream << ",Name";
+        stream << ",Name,Type";
     if (pdef.hasMultipleDefinitions())
     {
         auto def_sizes = pdef.getDefinitionSizes();
@@ -245,7 +247,7 @@ void unpackParametersTable(const MXE& mxe, const ParameterDefMap& params_defmap,
                         for (const auto& idx : iref)
                         {
                             const auto& pdata = mxec.ptable.psets[idx];
-                            dumpParamData(stream, pdata.dataset, pdef, pdata.ID, pdata.data_name, pdata.size);
+                            dumpParamData(stream, pdata.dataset, pdef, pdata.ID, pdata.data_name, stringmanip::MXEParameterEntityType(pdata.name), pdata.size);
                         }
                       },
                       "ID",
@@ -274,7 +276,7 @@ void unpackParametersTable(const MXE& mxe, const ParameterDefMap& params_defmap,
                             const auto& pdata = mxec.ptable.psets[idx];
                             for (const auto& subpdata : pdata.subparameters.at(subparam_name))
                             {
-                                dumpParamData(stream, subpdata, subpdef, pdata.ID, "", subpdef.fullDefinition().size);
+                                dumpParamData(stream, subpdata, subpdef, pdata.ID, "", "", subpdef.fullDefinition().size);
                             }
                             
                         }

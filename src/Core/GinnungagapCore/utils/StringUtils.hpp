@@ -57,7 +57,8 @@ namespace stringmanip
     std::string lrsegment(const std::string& s, const std::string& delimiter_1, const std::string& delimiter_2);
     std::string rlsegment(const std::string& s, const std::string& delimiter_1, const std::string& delimiter_2);
     std::string rsegment (const std::string& s, const std::string& delimiter_1, const std::string& delimiter_2);
-
+    
+    std::string MXEParameterEntityType(const std::string& s);
     std::string MXEParameterSetName(const std::string& s);
     std::string MXEParameterSetType(const std::string& s);
 

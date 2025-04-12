@@ -560,14 +560,14 @@ void packParametersTable(MXE& mxe, const ParameterDefMap& params_defmap, const s
             const MXEParameterSetDefinition* param_def;
             if (param_definition.hasMultipleDefinitions())
             {
-                start_idx = 3;
+                start_idx = 4;
                 // Get variant from CSV, assign variant
-                uint64_t variant_size = interpretString<uint64_t>(row[2], "Column 2 of row " + std::to_string(row_idx) + " cannot be interpreted as an unsigned integer");
+                uint64_t variant_size = interpretString<uint64_t>(row[3], "Column 3 of row " + std::to_string(row_idx) + " cannot be interpreted as an unsigned integer");
                 param_def = &param_definition.getDefinition(variant_size);
             }
             else
             {
-                start_idx = 2;
+                start_idx = 3;
                 // Assign default variant
                 param_def = &param_definition.getDefinition(0);
             }

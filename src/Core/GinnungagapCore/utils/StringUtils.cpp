@@ -77,6 +77,11 @@ namespace stringmanip
     }
 
 
+    std::string MXEParameterEntityType(const std::string& s)
+    {
+        return section<SectionSide::Left>(s, ":");
+    }
+
     std::string MXEParameterSetType(const std::string& s)
     {
         return lrsegment(s, ":", "@");
