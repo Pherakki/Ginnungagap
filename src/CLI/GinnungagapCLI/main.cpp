@@ -175,10 +175,11 @@ void packMXE(MXE& mxe, const std::filesystem::path& filepath, const ParameterDef
     mxe.mxen.mxec.toc.content_flags = 0x101;
     
     packMetadata(mxe, filepath);
+    packAssetsTable    (mxe, filepath);
     packParametersTable(mxe, params_defmap, filepath); // This needs to calculate the TexMerge offset
     packEntitiesTable  (mxe, flat_entity_defmap, filepath); // This needs to ignore cells if the component is not there
     packPathsTable     (mxe, filepath);
-    packAssetsTable    (mxe, filepath);
+    cleanupAssetsTable (mxe);
     packGroupsTable    (mxe, filepath, mxe.mxen.mxec.utoc2.exists);
     
     // Rebuild entity component parameter names

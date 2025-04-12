@@ -10,4 +10,5 @@ void packParametersTable(MXE& mxe, const ParameterDefMap&  params_defmap, const 
 void packEntitiesTable  (MXE& mxe, const FlatEntityDefMap& entity_defmap, const std::filesystem::path& root_path);
 void packPathsTable     (MXE& mxe, const std::filesystem::path& root_path);
 void packAssetsTable    (MXE& mxe, const std::filesystem::path& root_path);
+void cleanupAssetsTable (MXE& mxe);
 void packGroupsTable    (MXE& mxe, const std::filesystem::path& root_path, bool has_unknown_table_2);

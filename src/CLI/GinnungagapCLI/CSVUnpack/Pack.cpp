@@ -5,6 +5,7 @@
 #include <exbip/descriptors/streammarker.hpp>
 #include <GinnungagapCore/structs/Valkyria/Containers/Database/MXEN/MXEC/StringBank.hpp>
 
+typedef std::unordered_map<decltype(AssetRef::ID), decltype(AssetRef::filetype)> AssetLookup_t;
 
 template<typename T>
 class ShiftedOffsetReference : public exbip::OffsetReference
@@ -60,6 +61,7 @@ static std::vector<std::pair<size_t, size_t>> findFilenameOrder(const std::vecto
 
 
 struct ParameterErrorData
+int32_t extToAssetType(const std::string& file_ext)
 {
     uint32_t ID;
     uint32_t row;
@@ -155,6 +157,25 @@ std::vector<ParameterErrorData> checkParameterTableCSVErrors(const std::string& 
         exit(1);
     
     return param_IDs;
+    if      (file_ext == "hmd") return 1;
+    else if (file_ext == "htx") return 2;
+    else if (file_ext == "hmt") return 3;
+    else if (file_ext == "mcl") return 6;
+    else if (file_ext == "mlx") return 8;
+    else if (file_ext == "abr") return 9;
+    else if (file_ext == "abd") return 10;
+    else if (file_ext == "cvd") return 12;
+    else if (file_ext == "hst") return 12;
+    else if (file_ext == "bhv") return 12;
+    else if (file_ext == "hmm") return 13;
+    else if (file_ext == "pvs") return 20;
+    else if (file_ext == "htf") return 21;
+    else if (file_ext == "htr") return 22;
+    else if (file_ext == "mmf") return 24;
+    else if (file_ext == "mmr") return 25;
+    // htf
+    // hmm
+    else return -1;
 }
 
 
@@ -334,7 +355,7 @@ void setParameterData(const std::string& s, Parameter& elem, const std::string& 
 }
 
 
-static void markAssetRefs(const MXEParameterSetDefinition* const param_def, const ParameterSet& pset, std::vector<std::pair<uint32_t, int64_t>>& asset_offsets)
+static void markAssetRefs(const AssetLookup_t& asset_lookup, const MXEParameterSetDefinition* const param_def, const ParameterSet& pset, std::vector<std::pair<uint32_t, int64_t>>& asset_offsets)
 {
 
 
@@ -348,10 +369,31 @@ static void markAssetRefs(const MXEParameterSetDefinition* const param_def, cons
         {
             asset_offsets.emplace_back(pset.ID, asset_offset);
         }
+
+        // Validation
+        if (asset_id > -1)
+        {
+            if (asset_lookup.count(asset_id) == 0)
+            {
+                std::cout << "Error: Parameter ID " << pset.ID << " (" << stringmanip::sjisToUtf8(pset.name) << ") uses asset ID " << asset_id << ", which is not defined in the assets.csv. Aborting." << std::endl;
+                exit(1);
+            }
+
+            const auto asset_type = param_def->assets.at(asset_idx);
+            auto asset_type_id = extToAssetType(asset_type);
+            if (asset_type_id == -1) // Unknown asset type
+                return;
+            
+            if (asset_type_id != asset_lookup.at(asset_id))
+            {
+                std::cout << "Error: Parameter ID " << pset.ID << " (" << stringmanip::sjisToUtf8(pset.name) << ") uses asset ID " << asset_id << ", which is not a " << asset_type << " file as required by this parameter set. Aborting." << std::endl;
+                exit(1);
+            }
+        }
     }
 }
 
-static void markAssetRefsSlgEnGrassParam(const MXEParameterSetDefinition* const param_def, const ParameterSet& pset, std::vector<std::pair<uint32_t, int64_t>>& asset_offsets)
+static void markAssetRefsSlgEnGrassParam(const AssetLookup_t& asset_lookup, const MXEParameterSetDefinition* const param_def, const ParameterSet& pset, std::vector<std::pair<uint32_t, int64_t>>& asset_offsets)
 {
 
 
@@ -364,6 +406,27 @@ static void markAssetRefsSlgEnGrassParam(const MXEParameterSetDefinition* const 
         //if (asset_id >= 0)
         {
             asset_offsets.emplace_back(pset.ID, asset_offset);
+        }
+
+        // Validation
+        if (asset_id > -1)
+        {
+            if (asset_lookup.count(asset_id) == 0)
+            {
+                std::cout << "Error: Parameter ID " << pset.ID << " (" << stringmanip::sjisToUtf8(pset.name) << ") uses asset ID " << asset_id << ", which is not defined in the assets.csv. Aborting." << std::endl;
+                exit(1);
+            }
+
+            const auto asset_type = param_def->assets.at(asset_idx);
+            auto asset_type_id = extToAssetType(asset_type);
+            if (asset_type_id == -1) // Unknown asset type
+                return;
+            
+            if (asset_type_id != asset_lookup.at(asset_id))
+            {
+                std::cout << "Error: Parameter ID " << pset.ID << " (" << stringmanip::sjisToUtf8(pset.name) << ") uses asset ID " << asset_id << ", which is not a " << asset_type << " file as required by this parameter set. Aborting." << std::endl;
+                exit(1);
+            }
         }
     }
     size_t asset_idx    = param_def->asset_vars.back();
@@ -443,6 +506,12 @@ void packMetadata(MXE& mxe, const std::filesystem::path& root_path)
 
 void packParametersTable(MXE& mxe, const ParameterDefMap& params_defmap, const std::filesystem::path& root_path)
 {
+    AssetLookup_t asset_lookup = {};
+    for (const auto& asset : mxe.mxen.mxec.atable.arefs)
+    {
+        asset_lookup[asset.ID] = asset.filetype;
+    }
+
     auto& ptable = mxe.mxen.mxec.ptable;
     ptable.psets.clear();
     mxe.mxen.mxec.atable.asset_uses.clear();
@@ -545,9 +614,9 @@ void packParametersTable(MXE& mxe, const ParameterDefMap& params_defmap, const s
 
             // Mark assets while we're here
             if (param_type == "SlgEnGrassParam")
-                markAssetRefsSlgEnGrassParam(param_def, pset, asset_offsets);
+                markAssetRefsSlgEnGrassParam(asset_lookup, param_def, pset, asset_offsets);
             else
-                markAssetRefs(param_def, pset, asset_offsets);
+                markAssetRefs(asset_lookup, param_def, pset, asset_offsets);
         }
 
         // Deal with subparameter packing...
@@ -1139,31 +1208,24 @@ void packAssetsTable(MXE& mxe, const std::filesystem::path& root_path)
         // Figure out file type
         std::string file_ext = stringmanip::rsection<stringmanip::SectionSide::Right>(row[2], ".");
         std::transform(file_ext.begin(), file_ext.end(), file_ext.data(), [](char c){ return std::tolower(c); });
-        if      (file_ext == "hmd") aref.filetype = 1;
-        else if (file_ext == "htx") aref.filetype = 2;
-        else if (file_ext == "hmt") aref.filetype = 3;
-        else if (file_ext == "mcl") aref.filetype = 6;
-        else if (file_ext == "mlx") aref.filetype = 8;
-        else if (file_ext == "abr") aref.filetype = 9;
-        else if (file_ext == "abd") aref.filetype = 10;
-        else if (file_ext == "cvd") aref.filetype = 12;
-        else if (file_ext == "hst") aref.filetype = 12;
-        else if (file_ext == "bhv") aref.filetype = 12;
-        else if (file_ext == "hmm") aref.filetype = 13;
-        else if (file_ext == "pvs") aref.filetype = 20;
-        else if (file_ext == "htf") aref.filetype = 21;
-        else if (file_ext == "htr") aref.filetype = 22;
-        else if (file_ext == "mmf") aref.filetype = 24;
-        else if (file_ext == "mmr") aref.filetype = 25;
-        // htf
-        // hmm
-        else
+        int32_t filetype = extToAssetType(file_ext);
+
+        if(filetype == -1)
         {
             std::cout << "Error: Unknown asset file extension '" << file_ext << "'. Aborting." << std::endl;
             exit(1);
         }
+        else
+        {
+            aref.filetype = static_cast<uint32_t>(filetype);
+        }
     }
+}
 
+
+void cleanupAssetsTable(MXE& mxe)
+{
+    auto& assets_table = mxe.mxen.mxec.atable;
     // The asset uses have been handled in the parameter set table generator.    
     assets_table.toc.asset_refs_count = assets_table.arefs.size();
     if (assets_table.toc.asset_refs_count == 0)
