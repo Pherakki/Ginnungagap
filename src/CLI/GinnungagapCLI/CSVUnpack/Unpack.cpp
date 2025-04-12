@@ -177,12 +177,12 @@ static void dumpParamsCSV(const std::filesystem::path& fpath, const MXEParameter
     if (!terse)
     {
         for (const auto& data_elem : mdef.data)
-            stream << ",\"" << data_elem.name << " [" << data_elem.type_name << "]\""; // ASCII, no need to convert encodings
+            stream << ",\"" << data_elem.label << " [" << data_elem.type_name << "]\""; // ASCII, no need to convert encodings
     }
     else
     {
         for (const auto& data_elem : mdef.data)
-            stream << ",\"" << terseifyTypeName(data_elem.type) << ":" << data_elem.name << "\""; // ASCII, no need to convert encodings
+            stream << ",\"" << terseifyTypeName(data_elem.type) << ":" << data_elem.label << "\""; // ASCII, no need to convert encodings
     }
     stream << std::endl;
 

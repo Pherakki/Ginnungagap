@@ -22,10 +22,42 @@ MXEParameterSetDefinition::MXEParameterSetDefinition(const nlohmann::ordered_jso
 
                 for(auto it = param_chunk.begin(); it != param_chunk.end(); ++it)
                 {
-                    if (!it.value().is_string()) continue;
+                    std::string str_dtype;
+                    std::string label;
+                    std::string endianness;
+                    if (it.value().is_structured())
+                    {
+                        const auto& elem_def = it.value();
 
-                    std::string v = it.value();
-                    std::string str_dtype = v.substr(1);
+                        for (auto ed_it = elem_def.begin(); ed_it != elem_def.end(); ++ed_it)
+                        {
+                            if (!ed_it.value().is_string())
+                                continue;
+                            
+                            if (ed_it.key() == "label")
+                            {
+                                label = ed_it.value();
+                            }
+                            else if (ed_it.key() == "type")
+                            {
+                                std::string v = ed_it.value();
+                                endianness = v.substr(0, 1);
+                                str_dtype = v.substr(1);
+                            }
+                        }
+                    }
+                    else if (it.value().is_string())
+                    {
+                        std::string v = it.value();
+                        endianness = v.substr(0, 1);
+                        str_dtype = v.substr(1);
+                        label = it.key();
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
                     ElementType dtype;
                     
                     if (str_dtype == "int8")
@@ -148,7 +180,7 @@ MXEParameterSetDefinition::MXEParameterSetDefinition(const nlohmann::ordered_jso
                     else
                         throw std::runtime_error("Unknown parameter element type '" + str_dtype + "' in parameter definition " + name);
 
-                    const auto& elem_def = this->data.emplace_back(DataElementDefinition{.name=it.key(), .type=dtype, .type_name=str_dtype, .endianness=v.substr(0, 1)});
+                    const auto& elem_def = this->data.emplace_back(DataElementDefinition{.name=it.key(), .label=label, .type=dtype, .type_name=str_dtype, .endianness=endianness});
 
                     if (elem_def.type == ElementType::SJISString)
                         this->sjis_vars.push_back(idx);

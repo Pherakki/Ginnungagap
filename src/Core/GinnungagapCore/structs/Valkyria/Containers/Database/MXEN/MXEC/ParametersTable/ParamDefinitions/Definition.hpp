@@ -56,6 +56,7 @@ struct MXESubParameterDefinition
 struct DataElementDefinition
 {
     std::string name;
+    std::string label;
     ElementType type;
     std::string type_name;
     std::string endianness;
