@@ -896,7 +896,7 @@ void packPathsTable(MXE& mxe, const std::filesystem::path& root_path)
             uint32_t node_idx=0;
             for (int row_idx=1; row_idx < csv.rowCount(); ++row_idx)
             {
-                const auto& row = csv[row_idx];
+                auto& row = csv[row_idx];
                 if (row.empty())
                     continue;
 
@@ -921,15 +921,25 @@ void packPathsTable(MXE& mxe, const std::filesystem::path& root_path)
 
                 int n_pairs = (row.size() - 2) / 3; // -2 for skipping the first two columns
                 int incomplete_edge = (row.size()-2) % 3;
-                if (incomplete_edge != 0)
+                while (incomplete_edge)
                 {
-                    std::cout << "Error: row " << row_idx << " in " << f.string() << " has an incomplete edge definition (and " << n_pairs << " complete definitions)" << std::endl;
-                    exit(1);
+                    row.push_back("");
+                    incomplete_edge--;
                 }
 
                 for (int local_edge_idx=0; local_edge_idx < n_pairs; ++local_edge_idx)
                 {
                     int col_idx = 2 + local_edge_idx*3 + 1;
+                    if (row[col_idx-1].empty() || row[col_idx].empty() || row[col_idx+1].empty())
+                    {
+                        // Skip empty triplets
+                        if (row[col_idx-1].empty() && row[col_idx].empty() && row[col_idx+1].empty())
+                            continue;
+                        
+                        std::cout << "Error: Column " << col_idx-1 << " of row " << row_idx << " in graph CSV " << f.string() << " is the start of a partially-defined edge. Either make this definition completely empty, or fill in all three components of the edge." << std::endl;
+                        exit(1); 
+                    }
+
                     int edge_id = interpretString<int>(row[col_idx], "Unable to interpret column " + std::to_string(col_idx) + " of row " + std::to_string(row_idx) + " of " + f.string() + " as an integer");
                     if (edge_ids_set.contains(edge_id))
                     {
@@ -1001,6 +1011,10 @@ void packPathsTable(MXE& mxe, const std::filesystem::path& root_path)
                 {
                     // Extract target node ID + edge ID
                     int col_idx = 2 + local_edge_idx*3;
+                    // Already errored out if an edge definition is partially defined, so we can do a quick check now.
+                    if (row[col_idx].empty())
+                        continue;
+                    
                     auto target_node_param_id  = interpretString<uint32_t>(row[col_idx+0], "Unable to interpret column " + std::to_string(col_idx) + " of row " + std::to_string(row_idx) + "in " + f.string() + " as an integer node index");
                     auto edge_id               = interpretString<uint32_t>(row[col_idx+1], "Unable to interpret column " + std::to_string(col_idx) + " of row " + std::to_string(row_idx) + "in " + f.string() + " as an integer node index");
                     
