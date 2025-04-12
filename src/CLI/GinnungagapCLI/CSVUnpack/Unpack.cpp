@@ -469,7 +469,7 @@ void unpackAssetsTable(const MXE& mxe, std::filesystem::path& root_path)
     if (mxec.atable.arefs.size())
     {
         std::ofstream stream = safe_create_textfile(root_path/"assets.csv");
-        stream << "ID;Directory;Filename;Mergefile Index;Texmerge File Index; Texmerge Index\n";
+        stream << "ID,Directory,Filename,Mergefile Index,Texmerge File Index,Texmerge Index\n";
         for (const auto& asset : mxec.atable.arefs)
         {
             stream << asset.ID << ",";
