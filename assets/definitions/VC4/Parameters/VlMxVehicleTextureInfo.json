@@ -11,5 +11,13 @@
             "model pack 3"   : "<asset",
             "model pack 4"   : "<asset"
         }
-    ]
+    ],
+    "assets":
+    {
+        "model pack"   : "mlx",
+        "model pack 2" : "mlx",
+        "model pack 3" : "mlx",
+        "model pack 4" : "mlx"
+    }
 }
+

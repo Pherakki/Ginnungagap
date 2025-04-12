@@ -24,7 +24,7 @@
             "material anim"  : "<asset",
             "unknown_0x60"   : "<int32",
             "unknown_0x64"   : "<int32",
-            "unknown_0x68"   : "<asset",
+            "animation 2"    : "<asset",
             "unknown_0x70"   : "<int32",
             "unknown_0x74"   : "<int32",
             "unknown_0x78"   : "<int32",
@@ -36,7 +36,8 @@
         "model"          : "hmd",
         "textures"       : "htx",
         "animation"      : "hmt",
-        "material anim"  : "hmm"
+        "material anim"  : "hmm",
+        "animation 2"    : "hmt"
     },
     "roles":
     {
