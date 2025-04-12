@@ -7,7 +7,7 @@ There is no detailed guide for modding using MXEs that I am currently aware of.
 
 Currently this is provided only as a command-line program, with the following usage:
 ```
-Usage: [program path] <-u/-p/--unpack/--pack> [-r] [-t] <input file/directory> <output file/directory>
+Usage: [program path] <-u/-p/--unpack/--pack/--next-id> [-r] [-t] <input file/directory> <output file/directory>
     -u <input file> <output directory>              : Unpacks a single MXE file to a directory of CSVs, written to <output directory>
     --unpack <input file> <output directory>        : Unpacks a single MXE file to a directory of CSVs, written to <output directory>
     -u -r <input directory> <output directory>      : Unpacks a directory of MXE files to CSVs, written to <output directory>
@@ -16,6 +16,7 @@ Usage: [program path] <-u/-p/--unpack/--pack> [-r] [-t] <input file/directory> <
     --pack <input directory> <output directory>     : Packs a directory containing CSV files to a single MXE file, written to <output directory>
     -p -r <input directory> <output directory>      : Packs multiple directories containing CSV files to corresponding MXE files, written to <output directory>
     --pack -r <input directory> <output directory>  : Packs multiple directories containing CSV files to corresponding MXE files, written to <output directory>
+    --next-id <input directory>                     : Returns the next available parameter set ID.
     Add -t for 'terse mode'; where types are written to CSV as single-character keys.
 ```
 

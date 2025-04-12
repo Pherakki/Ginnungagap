@@ -11,6 +11,7 @@ add_executable(${PROJECT_NAME}
     GinnungagapCLI/main.cpp
     GinnungagapCLI/CSVUnpack/Unpack.cpp
     GinnungagapCLI/CSVUnpack/Pack.cpp
+    GinnungagapCLI/CSVUnpack/MXEInfo.cpp
 )
 
 # Done

@@ -1,5 +1,6 @@
 #include "CSVUnpack/Unpack.hpp"
 #include "CSVUnpack/Pack.hpp"
+#include "CSVUnpack/MXEInfo.hpp"
 #include "GinnungagapCore/utils/Paths.hpp"
 #include "GinnungagapCore/structs/Valkyria/Filetypes/MXE/BinaryVC4.hpp"
 #include "GinnungagapCore/structs/Valkyria/Containers/Database/MXEN/MXEC/ParametersTable/ParamDefinitions/Load.hpp"
@@ -25,6 +26,18 @@ public:
             else if (mode == "-p")       this->pack   = true;
             else if (mode == "--unpack") this->unpack = true;
             else if (mode == "--pack")   this->pack   = true;
+            else if (mode == "--next-id")
+            {
+                this->next_id = true;
+                if (argc < 3)
+                {
+                    std::cout << "Error: Missing input directory" << std::endl;
+                    CmdParser::printUsage();
+                    exit(1);
+                }
+                this->src_dir = std::filesystem::path(argv[2]);
+                return;
+            }
             else
             {
                 std::cout << "Error: invalid mode '" << mode << "'" << std::endl;
@@ -105,7 +118,7 @@ public:
 
     static void printUsage()
     {
-        std::cout << "Usage: <-u/-p/--unpack/--pack> [-r] [-t] <input file/directory> <output file/directory>\n" << std::endl;
+        std::cout << "Usage: <-u/-p/--unpack/--pack/--next-id> [-r] [-t] <input file/directory> <output file/directory>\n" << std::endl;
         std::cout << "    -u <input file> <output directory>              : Unpacks a single MXE file to a directory of CSVs, written to <output directory>" << std::endl;
         std::cout << "    --unpack <input file> <output directory>        : Unpacks a single MXE file to a directory of CSVs, written to <output directory>" << std::endl;
         std::cout << "    -u -r <input directory> <output directory>      : Unpacks a directory of MXE files to CSVs, written to <output directory>" << std::endl;
@@ -114,6 +127,7 @@ public:
         std::cout << "    --pack <input directory> <output directory>     : Packs a directory containing CSV files to a single MXE file, written to <output directory>" << std::endl;
         std::cout << "    -p -r <input directory> <output directory>      : Packs multiple directories containing CSV files to corresponding MXE files, written to <output directory>" << std::endl;
         std::cout << "    --pack -r <input directory> <output directory>  : Packs multiple directories containing CSV files to corresponding MXE files, written to <output directory>" << std::endl;
+        std::cout << "    --next-id <input directory>                     : Returns the next available parameter set ID." << std::endl;
         std::cout << "    Add -t for 'terse mode'; where types are written to CSV as single-character keys." << std::endl;
     }
 
@@ -122,6 +136,7 @@ public:
     bool unpack = false;
     bool recursive=false;
     bool terse=false;
+    bool next_id=false;
     std::filesystem::path src_dir;
     std::filesystem::path dest_dir;
 };
@@ -237,6 +252,12 @@ int main(int argc, char** argv)
     EntityDefMap entity_defmap;
     loadEntityDefinitions(entity_defmap, getexepath().parent_path()/"assets"/"definitions"/"VC4"/"Entities");
     FlatEntityDefMap flat_entity_defmap = flattenEntityDefinitions(entity_defmap);
+
+    if (config.next_id)
+    {
+        std::cout << "Next ID: " << nextAvailableID(config.src_dir) << std::endl;
+        return 0;
+    }
 
     if (config.unpack)
     {
