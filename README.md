@@ -19,7 +19,7 @@ Usage: [program path] <-u/-p/--unpack/--pack> [-r] [-t] <input file/directory> <
     Add -t for 'terse mode'; where types are written to CSV as single-character keys.
 ```
 
-In the above, `[program path]` is the path to GinnungagapCLI on your system. For a Windows console with `GinnungagapCLI` in the current working directory, use `.\GinnungagapCLI` as `[program path]`. For the same situation in a Linux shell, use `./GinnungagapCLI`.
+In the above, `[program path]` is the path to GinnungagapCLI on your system. For a Windows console with `GinnungagapCLI` in the current working directory, use `.\GinnungagapCLI.exe` as `[program path]`. For the same situation in a Linux shell, use `./GinnungagapCLI`.
 
 A longer-term plan is to provide a GUI for MXEs that set up battle maps, such that entities can be placed/removed/edited on the map itself.
 Support for the original Valkyria Chronicles may follow.
