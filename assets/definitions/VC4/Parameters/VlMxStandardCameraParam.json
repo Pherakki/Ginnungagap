@@ -2,10 +2,10 @@
     "struct":
     [
         {
-            "unknown_0x00": "<float32",
-            "unknown_0x04": "<float32",
-            "unknown_0x08": "<float32",
-            "unknown_0x0C": "<float32"
+            "0x00": {"type": "<float32", "label": "" },
+            "0x04": {"type": "<float32", "label": "" },
+            "0x08": {"type": "<float32", "label": "" },
+            "0x0C": {"type": "<float32", "label": "" }
         }
     ]
 }

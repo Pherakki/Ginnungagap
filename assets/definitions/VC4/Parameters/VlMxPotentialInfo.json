@@ -2,23 +2,31 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<sjis_string",
-            "unknown_0x10"   : "<sjis_string",
-            "unknown_0x18"   : "<sjis_string",
-            "unknown_0x20"   : "<uint32",
-            "unknown_0x24"   : "<int32",
-            "unknown_0x28"   : "<int32",
-            "unknown_0x2C"   : "<int32",
-            "unknown_0x30"   : "<int32",
-            "unknown_0x34"   : "<int32",
-            "unknown_0x38"   : "<int32",
-            "unknown_0x3C"   : "<float32",
-            "unknown_0x40"   : "<float32",
-            "unknown_0x44"   : "<int32",
-            "unknown_0x48"   : "<int32",
-            "unknown_0x4C"   : "<int32"
+            "0x00"   : {"type": "<int32",       "label": "ID" },
+            "0x04"   : {"type": "<int32",       "label": "SpEffect" },
+            "0x08"   : {"type": "<sjis_string", "label": "XLB_Name" },
+            "0x10"   : {"type": "<sjis_string", "label": "XLB_FullDescr" },
+            "0x18"   : {"type": "<sjis_string", "label": "XLB_ShortDescr" },
+            "0x20"   : {"type": "<int8",      "label": "Acc" },
+			"0x21"   : {"type": "<int8",      "label": "Evd" },
+			"0x22"   : {"type": "<int8",      "label": "vsP" },
+			"0x23"   : {"type": "<int8",      "label": "vsA" },
+            "0x24"   : {"type": "<int8",       "label": "Def" },
+			"0x25"   : {"type": "<int8",       "label": "Bullets (ignored)" },
+			"0x26"   : {"type": "<int8",       "label": "HP% (ignored)" },
+			"0x27"   : {"type": "<int8",       "label": "GrassRange" },
+            "0x28"   : {"type": "<int8",       "label": "Heal" },
+			"0x29"   : {"type": "<int8",       "label": "Repair" },
+			"0x2A"   : {"type": "<int16",       "label": "" },
+            "0x2C"   : {"type": "<int32",       "label": "ProcType" },
+            "0x30"   : {"type": "<int32",       "label": "PosIconsBits" },
+            "0x34"   : {"type": "<int32",       "label": "NegIconsBits" },
+            "0x38"   : {"type": "<int32",       "label": "Trigger" },
+            "0x3C"   : {"type": "<float32",     "label": "Chance" },
+            "0x40"   : {"type": "<float32",     "label": "SpEffStrength" },
+            "0x44"   : {"type": "<int32",       "label": "Priority" },
+            "0x48"   : {"type": "<int32",       "label": "? Personal specials" },
+            "0x4C"   : {"type": "<int32",       "label": "" }
         }
     ]
 }

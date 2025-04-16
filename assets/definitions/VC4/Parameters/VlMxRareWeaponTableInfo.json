@@ -2,17 +2,17 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<int32",
-            "unknown_0x0C"   : "<int32",
-            "unknown_0x10"   : "<int32",
-            "unknown_0x14"   : "<int32",
-            "unknown_0x18"   : "<int32",
-            "unknown_0x1C"   : "<int32",
-            "unknown_0x20"   : "<int32",
-            "unknown_0x24"   : "<int32",
-            "unknown_0x28"   : "<int32"
+            "0x00": {"type": "<int32", "label": "Weapon Type" },
+            "0x04": {"type": "<int32", "label": "R&D Tier1" },
+            "0x08": {"type": "<int32", "label": "R&D Tier2" },
+            "0x0C": {"type": "<int32", "label": "R&D Tier3" },
+            "0x10": {"type": "<int32", "label": "R&D Tier4" },
+            "0x14": {"type": "<int32", "label": "R&D Tier5" },
+            "0x18": {"type": "<int32", "label": "Reward ID 1" },
+            "0x1C": {"type": "<int32", "label": "Reward ID 2" },
+            "0x20": {"type": "<int32", "label": "Reward ID 3" },
+            "0x24": {"type": "<int32", "label": "Reward ID 4" },
+            "0x28": {"type": "<int32", "label": "Reward ID 5" }
         }
     ]
 }

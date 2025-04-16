@@ -2,10 +2,10 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<int32",
-            "unknown_0x0C"   : "<float32",
+            "0x00"           : {"type": "<int32", "label": "" },
+            "0x04"           : {"type": "<int32", "label": "" },
+            "0x08"           : {"type": "<int32", "label": "" },
+            "0x0C"           : {"type": "<int32", "label": "ParamType" },
             "Pos x"          : "<float32",
             "Pos y"          : "<float32",
             "Pos z"          : "<float32",
@@ -22,13 +22,13 @@
             "textures"       : "<asset",
             "animation"      : "<asset",
             "material anim"  : "<asset",
-            "unknown_0x60"   : "<int32",
-            "unknown_0x64"   : "<int32",
-            "animation 2"    : "<asset",
-            "unknown_0x70"   : "<int32",
-            "unknown_0x74"   : "<int32",
-            "unknown_0x78"   : "<int32",
-            "unknown_0x7C"   : "<int32"
+            "0x60"           : {"type": "<int32", "label": "" },
+            "0x64"           : {"type": "<int32", "label": "" },
+            "0x68"           : {"type": "<asset", "label": "" },
+            "0x70"           : {"type": "<int32", "label": "" },
+            "0x74"           : {"type": "<int32", "label": "" },
+            "0x78"           : {"type": "<int32", "label": "" },
+            "0x7C"           : {"type": "<int32", "label": "" }
         }
     ],
     "assets":
@@ -36,8 +36,7 @@
         "model"          : "hmd",
         "textures"       : "htx",
         "animation"      : "hmt",
-        "material anim"  : "hmm",
-        "animation 2"    : "hmt"
+        "material anim"  : "hmm"
     },
     "roles":
     {

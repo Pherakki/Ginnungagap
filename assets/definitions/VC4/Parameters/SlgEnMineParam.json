@@ -2,12 +2,12 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
+            "unknown_0x00"   : {"type": "<int32", "label": "model?" },
+            "unknown_0x04"   : {"type": "<int32", "label": "" },
             "unknown asset 0x08" : "<asset",
             "unknown asset 0x10" : "<asset",
-            "unknown_0x18"   : "<int32",
-            "unknown_0x1C"   : "<int32"
+            "unknown_0x18"   : {"type": "<int32", "label": "explosion?" },
+            "unknown_0x1C"   : {"type": "<int32", "label": "" }
         }
     ],
     "assets":

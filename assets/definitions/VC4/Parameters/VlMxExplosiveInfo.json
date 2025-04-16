@@ -2,15 +2,15 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int16",
-            "unknown_0x06"   : "<int16",
-            "unknown_0x08"   : "<float32",
-            "unknown_0x0C"   : "<float32",
-            "unknown_0x10"   : "<float32",
-            "unknown_0x14"   : "<float32",
-            "unknown_0x18"   : "<float32",
-            "unknown_0x1C"   : "<float32"
+            "0x00"   : {"type": "<int32",   "label": "ID" },
+            "0x04"   : {"type": "<int16",   "label": "Type" },
+            "0x06"   : {"type": "<int16",   "label": "Tier" },
+            "0x08"   : {"type": "<float32", "label": "" },
+            "0x0C"   : {"type": "<float32", "label": "" },
+            "0x10"   : {"type": "<float32", "label": "" },
+            "0x14"   : {"type": "<float32", "label": "Inf HP % Cap" },
+            "0x18"   : {"type": "<float32", "label": "Tank HP % Cap" },
+            "0x1C"   : {"type": "<float32", "label": "" }
         }
     ]
 }
