@@ -2,24 +2,24 @@
     "struct":
     [
         {
-            "unknown_0x00": "<float32",
-            "unknown_0x04": "<float32",
-            "unknown_0x08": "<float32",
-            "unknown_0x0C": "<int16",
-            "unknown_0x0E": "<int16",
-            "unknown_0x10": "<int32",
-            "unknown_0x14": "<int32",
-            "unknown_0x18": "<int32",
-            "unknown_0x1C": "<int32",
-            "unknown_0x20": "<float32",
-            "unknown_0x24": "<int32",
-            "unknown_0x28": "<int32",
-            "unknown_0x2C": "<int32",
-            "color_1"     : "<color128",
-            "color_2"     : "<color128",
-            "Light Type"  : "<sjis_string",
-            "unknown_0x58": "<pad32",
-            "unknown_0x5C": "<pad32"
+            "0x00": {"type": "<float32",     "label": "" },
+            "0x04": {"type": "<float32",     "label": "" },
+            "0x08": {"type": "<float32",     "label": "" },
+            "0x0C": {"type": "<int16",       "label": "" },
+            "0x0E": {"type": "<int16",       "label": "" },
+            "0x10": {"type": "<int32",       "label": "" },
+            "0x14": {"type": "<int32",       "label": "" },
+            "0x18": {"type": "<int32",       "label": "" },
+            "0x1C": {"type": "<int32",       "label": "" },
+            "0x20": {"type": "<float32",     "label": "" },
+            "0x24": {"type": "<int32",       "label": "" },
+            "0x28": {"type": "<int32",       "label": "" },
+            "0x2C": {"type": "<int32",       "label": "" },
+            "0x30": {"type": "<color128",    "label": "color_1" },
+            "0x40": {"type": "<color128",    "label": "color_2" },
+            "0x50": {"type": "<sjis_string", "label": "Light Type" },
+            "0x58": {"type": "<pad32",       "label": "" },
+            "0x5C": {"type": "<pad32",       "label": "" }
         }
     ]
 }

@@ -2,17 +2,17 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<float32",
-            "unknown_0x04"   : "<float32",
-            "unknown_0x08"   : "<float32",
-            "unknown_0x0C"   : "<float32",
-            "unknown_0x10"   : "<float32",
-            "unknown_0x14"   : "<int16",
-            "unknown_0x16"   : "<int16",
-            "unknown_0x18"   : "<int16",
-            "unknown_0x1A"   : "<int16",
-            "unknown_0x1C"   : "<int16",
-            "unknown_0x1E"   : "<int16"
+            "0x00"   : {"type": "<float32", "label": "Pass Def" },
+            "0x04"   : {"type": "<float32", "label": "Pass VsP" },
+            "0x08"   : {"type": "<float32", "label": "Pass VsA" },
+            "0x0C"   : {"type": "<float32", "label": "High Morale Negative Chance Reduction" },
+            "0x10"   : {"type": "<float32", "label": "High Morale Last Stand Chance" },
+            "0x14"   : {"type": "<int16",   "label": "Base Kill Morale" },
+            "0x16"   : {"type": "<int16",   "label": "Base Tank Morale" },
+            "0x18"   : {"type": "<int16",   "label": "Base Camp Morale" },
+            "0x1A"   : {"type": "<int16",   "label": "Base Heal Morale" },
+            "0x1C"   : {"type": "<int16",   "label": "??? not HM threshold, not stand up +AP, not order" },
+            "0x1E"   : {"type": "<int16",   "label": "Inspire Pass Morale" }
         }
     ]
 }

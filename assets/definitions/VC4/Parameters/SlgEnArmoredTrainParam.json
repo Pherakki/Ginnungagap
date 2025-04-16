@@ -2,10 +2,10 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<int32",
-            "unknown_0x0C"   : "<float32",
+            "0x00"           : {"type": "<int32",   "label": "" },
+            "0x04"           : {"type": "<int32",   "label": "" },
+            "0x08"           : {"type": "<int32",   "label": "" },
+            "0x0C"           : {"type": "<int32",   "label": "ParamType" },
             "Pos x"          : "<float32",
             "Pos y"          : "<float32",
             "Pos z"          : "<float32",
@@ -32,10 +32,10 @@
             "unknown asset 0x98" : "<asset",
             "unknown asset 0xA0" : "<asset",
             "unknown asset 0xA8" : "<asset",
-            "unknown_0xB0"   : "<float32",
-            "unknown_0xB4"   : "<int32",
-            "unknown_0xB8"   : "<int32",
-            "unknown_0xBC"   : "<int32"
+            "0xB0"           : {"type": "<float32", "label": "" },
+            "0xB4"           : {"type": "<int32",   "label": "" },
+            "0xB8"           : {"type": "<int32",   "label": "" },
+            "0xBC"           : {"type": "<int32",   "label": "" }
         }
     ],
     "assets":

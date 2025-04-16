@@ -4,12 +4,12 @@
         "struct":
         [
              {
-                "unknown_0x00": "<int32",
-                "padding_0x04": "<pad32",
-                "abd"         : "<asset",
-                "abr"         : "<asset",
-                "unknown_0x18": "<int32",
-                "unknown_0x1C": "<int32"
+                "0x00": {"type": "<int32", "label": "?" },
+                "0x04": "<pad32",
+                "abd" : "<asset",
+                "abr" : "<asset",
+                "0x18": {"type": "<int32", "label": "" },
+                "0x1C": {"type": "<int32", "label": "SlgId" }
             }
          ],
         "assets":
@@ -23,16 +23,16 @@
         "struct":
         [
              {
-                "unknown_0x00": "<int32",
-                "padding_0x04": "<pad32",
-                "abd"         : "<asset",
-                "abr"         : "<asset",
-                "unknown_0x18": "<int32",
-                "unknown_0x1C": "<int32",
-                "unknown_0x20": "<float32",
-                "unknown_0x24": "<float32",
-                "unknown_0x28": "<float32",
-                "unknown_0x2C": "<int32"
+                "0x00": {"type": "<int32", "label": "?" },
+                "0x04": "<pad32",
+                "abd" : "<asset",
+                "abr" : "<asset",
+                "0x18": {"type": "<int32", "label": "" },
+                "0x1C": {"type": "<int32", "label": "SlgId" },
+                "0x20": {"type": "<float32", "label": "" },
+                "0x24": {"type": "<float32", "label": "" },
+                "0x28": {"type": "<float32", "label": "" },
+                "0x2C": {"type": "<int32", "label": "" }
             }
          ],
         "assets":
@@ -46,18 +46,18 @@
         "struct":
         [
              {
-                "unknown_0x00": "<int32",
-                "padding_0x04": "<pad32",
-                "abd"         : "<asset",
-                "abr"         : "<asset",
-                "unknown_0x18": "<int32",
-                "unknown_0x1C": "<int32",
-                "unknown_0x20": "<float32",
-                "unknown_0x24": "<float32",
-                "unknown_0x28": "<float32",
-                "unknown_0x2C": "<int32",
-                "unknown_0x30": "<int32",
-                "unknown_0x34": "<int32"
+                "0x00": {"type": "<int32", "label": "?" },
+                "0x04": "<pad32",
+                "abd" : "<asset",
+                "abr" : "<asset",
+                "0x18": {"type": "<int32", "label": "" },
+                "0x1C": {"type": "<int32", "label": "SlgId" },
+                "0x20": {"type": "<float32", "label": "" },
+                "0x24": {"type": "<float32", "label": "" },
+                "0x28": {"type": "<float32", "label": "" },
+                "0x2C": {"type": "<int32", "label": "" },
+                "0x30": {"type": "<int32", "label": "" },
+                "0x34": {"type": "<int32", "label": "?" }
             }
          ],
         "assets":
@@ -71,20 +71,20 @@
         "struct":
         [
              {
-                "unknown_0x00": "<int32",
-                "padding_0x04": "<pad32",
-                "abd"         : "<asset",
-                "abr"         : "<asset",
-                "unknown_0x18": "<int32",
-                "unknown_0x1C": "<int32",
-                "unknown_0x20": "<float32",
-                "unknown_0x24": "<float32",
-                "unknown_0x28": "<float32",
-                "unknown_0x2C": "<int32",
-                "unknown_0x30": "<int32",
-                "unknown_0x34": "<int32",
-                "unknown_0x38": "<int32",
-                "unknown_0x3C": "<int32"
+                "0x00": {"type": "<int32", "label": "?" },
+                "0x04": "<pad32",
+                "abd" : "<asset",
+                "abr" : "<asset",
+                "0x18": {"type": "<int32", "label": "" },
+                "0x1C": {"type": "<int32", "label": "SlgId" },
+                "0x20": {"type": "<float32", "label": "" },
+                "0x24": {"type": "<float32", "label": "" },
+                "0x28": {"type": "<float32", "label": "" },
+                "0x2C": {"type": "<int32", "label": "" },
+                "0x30": {"type": "<int32", "label": "" },
+                "0x34": {"type": "<int32", "label": "?" },
+                "0x38": {"type": "<int32", "label": "" },
+                "0x3C": {"type": "<int32", "label": "" }
             }
          ],
         "assets":

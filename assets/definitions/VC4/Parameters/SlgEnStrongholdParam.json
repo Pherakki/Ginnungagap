@@ -2,10 +2,10 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<int32",
-            "unknown_0x0C"   : "<float32",
+            "0x00"           : {"type": "<int32",   "label": "" },
+            "0x04"           : {"type": "<int32",   "label": "" },
+            "0x08"           : {"type": "<int32",   "label": "" },
+            "0x0C"           : {"type": "<int32",   "label": "ParamType" },
             "Pos x"          : "<float32",
             "Pos y"          : "<float32",
             "Pos z"          : "<float32",
@@ -31,12 +31,12 @@
             "animation 4"    : "<asset",
             "animation 5"    : "<asset",
             "cvd 2"          : "<asset",
-            "Team"           : "<int32",
-            "path ID"        : "<int32",
-            "unknown_0xB0"   : "<int32",
-            "unknown_0xB4"   : "<int32",
-            "unknown_0xB8"   : "<int32",
-            "unknown_0xBC"   : "<int32"
+            "Team"           : {"type": "<int32", "label": "Faction" },
+            "path ID"        : {"type": "<int32", "label": "PathID" },
+            "0xB0"           : {"type": "<int32", "label": "isHQ" },
+            "0xB4"           : {"type": "<int32", "label": "" },
+            "0xB8"           : {"type": "<int32", "label": "" },
+            "0xBC"           : {"type": "<int32", "label": "" }
         }
     ],
     "assets":

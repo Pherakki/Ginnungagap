@@ -2,22 +2,22 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<int32",
-            "unknown_0x0C"   : "<int32",
-            "unknown_0x10"   : "<int32",
-            "unknown_0x14"   : "<float32",
-            "unknown_0x18"   : "<float32",
-            "unknown_0x1C"   : "<float32",
-            "unknown_0x20"   : "<float32",
-            "unknown_0x24"   : "<float32",
-            "unknown_0x28"   : "<int32",
-            "unknown_0x2C"   : "<int32",
-            "unknown_0x30"   : "<int32",
-            "unknown_0x34"   : "<int32",
-            "unknown_0x38"   : "<int32",
-            "unknown_0x3C"   : "<int32"
+            "0x00": {"type": "<int32",   "label": "?" },
+            "0x04": {"type": "<int32",   "label": "Def Down" },
+            "0x08": {"type": "<int32",   "label": "Acc Down" },
+            "0x0C": {"type": "<int32",   "label": "Atk Down" },
+            "0x10": {"type": "<int32",   "label": "HP% Drain" },
+            "0x14": {"type": "<float32", "label": "HP% Seconds" },
+            "0x18": {"type": "<float32", "label": "Speed Down" },
+            "0x1C": {"type": "<float32", "label": "Speed Down Seconds" },
+            "0x20": {"type": "<float32", "label": "Speed Down Strength" },
+            "0x24": {"type": "<float32", "label": "Threads % Max AP Down" },
+            "0x28": {"type": "<int32",   "label": "ShotsDown" },
+            "0x2C": {"type": "<int32",   "label": "?" },
+            "0x30": {"type": "<int32",   "label": "?" },
+            "0x34": {"type": "<int32",   "label": "" },
+            "0x38": {"type": "<int32",   "label": "" },
+            "0x3C": {"type": "<int32",   "label": "" }
         }
     ]
 }

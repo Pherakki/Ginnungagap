@@ -2,10 +2,10 @@
     "struct":
     [
         {
-            "Unit 1": "<uint32",
-            "Unit 2": "<uint32",
-            "Percentage": "<uint32",
-            "unknown_0x0C": "<uint32"
+            "0x00": {"type": "<uint32", "label": "Unit 1" },
+            "0x04": {"type": "<uint32", "label": "Unit 2" },
+            "0x08": {"type": "<uint32", "label": "Percentage?" },
+            "0x0C": {"type": "<uint32", "label": "" }
         }
     ]
 }

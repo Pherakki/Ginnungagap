@@ -2,9 +2,9 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int16",
-            "unknown_0x02"   : "<int16",
-            "unknown_0x04"   : "<int16"
+            "0x00"   : {"type": "<int16", "label": "" },
+            "0x02"   : {"type": "<int16", "label": "" },
+            "0x04"   : {"type": "<int16", "label": "" }
         }
     ]
 }

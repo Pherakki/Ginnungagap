@@ -2,11 +2,11 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<int32",
-            "unknown_0x0C"   : "<int32",
-            "unknown_0x10"   : "<int32"
+            "0x00"   : {"type": "<int32", "label": "ID" },
+            "0x04"   : {"type": "<int32", "label": "XLB_Name" },
+            "0x08"   : {"type": "<int32", "label": "XLB_Description" },
+            "0x0C"   : {"type": "<int32", "label": "RenownPrice" },
+            "0x10"   : {"type": "<int32", "label": "EffectType?" }
         }
     ]
 }

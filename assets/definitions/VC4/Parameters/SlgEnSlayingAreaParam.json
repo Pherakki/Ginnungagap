@@ -2,26 +2,26 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<float32",
-            "unknown_0x04"   : "<float32",
-            "unknown_0x08"   : "<float32",
-            "unknown_0x0C"   : "<float32",
-            "unknown_0x10"   : "<float32",
-            "unknown_0x14"   : "<int32",
-            "unknown_0x18"   : "<float32",
-            "unknown_0x1C"   : "<float32",
-            "unknown_0x20"   : "<int32",
-            "unknown_0x24"   : "<float32",
-            "unknown_0x28"   : "<int32",
-            "unknown_0x2C"   : "<float32",
-            "unknown_0x30"   : "<float32",
-            "unknown_0x34"   : "<int32",
-            "unknown_0x38"   : "<float32",
-            "unknown_0x3C"   : "<float32",
-            "unknown_0x40"   : "<int32",
-            "unknown_0x44"   : "<int32",
-            "unknown_0x48"   : "<int32",
-            "unknown_0x4C"   : "<int32"
+            "0x00"   : {"type": "<float32", "label": "" },
+            "0x04"   : {"type": "<float32", "label": "" },
+            "0x08"   : {"type": "<float32", "label": "" },
+            "0x0C"   : {"type": "<float32", "label": "" },
+            "0x10"   : {"type": "<float32", "label": "" },
+            "0x14"   : {"type": "<int32",   "label": "" },
+            "0x18"   : {"type": "<float32", "label": "" },
+            "0x1C"   : {"type": "<float32", "label": "" },
+            "0x20"   : {"type": "<int32",   "label": "" },
+            "0x24"   : {"type": "<float32", "label": "" },
+            "0x28"   : {"type": "<int32",   "label": "" },
+            "0x2C"   : {"type": "<float32", "label": "" },
+            "0x30"   : {"type": "<float32", "label": "" },
+            "0x34"   : {"type": "<int32",   "label": "" },
+            "0x38"   : {"type": "<float32", "label": "" },
+            "0x3C"   : {"type": "<float32", "label": "" },
+            "0x40"   : {"type": "<int32",   "label": "" },
+            "0x44"   : {"type": "<int32",   "label": "" },
+            "0x48"   : {"type": "<int32",   "label": "" },
+            "0x4C"   : {"type": "<int32",   "label": "" }
         }
     ]
 }

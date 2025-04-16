@@ -2,20 +2,20 @@
     "struct":
     [
         {
-            "id"          : "<int32",
-            "unknown_0x04": "<int32",
-            "unknown_0x08": "<int32",
-            "unknown_0x0C": "<int32",
-            "unknown_0x10": "<sjis_string",
-            "unknown_0x18": "<sjis_string",
-            "unknown_0x20": "<sjis_string",
-            "unknown_0x28": "<int32",
-            "unknown_0x2C": "<int32",
-            "unknown_0x30": "<int32",
-            "unknown_0x34": "<int32",
-            "unknown_0x38": "<int32",
-            "unknown_0x3C": "<int32",
-            "unknown_0x40": "<sjis_string"
+            "0x00": {"type": "<int32",       "label": "id" },
+            "0x04": {"type": "<int32",       "label": "" },
+            "0x08": {"type": "<int32",       "label": "" },
+            "0x0C": {"type": "<int32",       "label": "" },
+            "0x10": {"type": "<sjis_string", "label": "" },
+            "0x18": {"type": "<sjis_string", "label": "" },
+            "0x20": {"type": "<sjis_string", "label": "" },
+            "0x28": {"type": "<int32",       "label": "" },
+            "0x2C": {"type": "<int32",       "label": "" },
+            "0x30": {"type": "<int32",       "label": "" },
+            "0x34": {"type": "<int32",       "label": "" },
+            "0x38": {"type": "<int32",       "label": "" },
+            "0x3C": {"type": "<int32",       "label": "" },
+            "0x40": {"type": "<sjis_string", "label": "" }
         }
     ]
 }

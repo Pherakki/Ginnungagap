@@ -2,21 +2,21 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
+            "0x00"   : {"type": "<int32",       "label": "" },
+            "0x04"   : {"type": "<int32",       "label": "" },
             "model pack"     : "<asset",
-            "unknown_0x10"   : "<int32",
-            "unknown_0x14"   : "<int32",
-            "unknown_0x18"   : "<int32",
-            "unknown_0x1C"   : "<int32",
-            "unknown_0x20"   : "<sjis_string",
-            "unknown_0x28"   : "<sjis_string",
-            "unknown_0x30"   : "<sjis_string",
-            "unknown_0x38"   : "<sjis_string",
-            "unknown_0x40"   : "<int32",
-            "unknown_0x44"   : "<int32",
-            "unknown_0x48"   : "<int32",
-            "unknown_0x4C"   : "<int32"
+            "0x10"   : {"type": "<int32",       "label": "" },
+            "0x14"   : {"type": "<int32",       "label": "" },
+            "0x18"   : {"type": "<int32",       "label": "" },
+            "0x1C"   : {"type": "<int32",       "label": "" },
+            "0x20"   : {"type": "<sjis_string", "label": "" },
+            "0x28"   : {"type": "<sjis_string", "label": "" },
+            "0x30"   : {"type": "<sjis_string", "label": "" },
+            "0x38"   : {"type": "<sjis_string", "label": "" },
+            "0x40"   : {"type": "<int32",       "label": "" },
+            "0x44"   : {"type": "<int32",       "label": "" },
+            "0x48"   : {"type": "<int32",       "label": "" },
+            "0x4C"   : {"type": "<int32",       "label": "" }
         }
     ],
     "assets":

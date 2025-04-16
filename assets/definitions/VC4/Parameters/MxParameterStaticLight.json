@@ -2,9 +2,9 @@
     "struct":
     [
         {
-            "light_count":  "<uint32",
+            "light_count" : "<uint32",
             "padding_0x08": "<uint32",
-            "lights_ptr":   "<pointer64"
+            "lights_ptr"  : "<pointer64"
         }
     ],
     "subparams":

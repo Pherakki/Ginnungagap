@@ -5,10 +5,10 @@
             "model"          : "<asset",
             "textures"       : "<asset",
             "unknown asset"  : "<asset",
-            "unknown_0x18"   : "<float32",
-            "unknown_0x1C"   : "<int32",
-            "unknown_0x20"   : "<int32",
-            "unknown_0x24"   : "<int32"
+            "0x18"           : {"type": "<float32", "label": "" },
+            "0x1C"           : {"type": "<int32",   "label": "" },
+            "0x20"           : {"type": "<int32",   "label": "" },
+            "0x24"           : {"type": "<int32",   "label": "GameFlag" }
         }
     ],
     "assets":
