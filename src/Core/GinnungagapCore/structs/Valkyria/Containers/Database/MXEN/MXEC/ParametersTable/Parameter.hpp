@@ -171,6 +171,38 @@ struct Parameter
                     std::to_string(data[2]) + "_" +
                     std::to_string(data[3]);
             }
+            case ElementType::Bit8:
+            {
+                return stringmanip::toBitString(data.m_uint8);
+            }
+            case ElementType::Bit16:
+            {
+                return stringmanip::toBitString(data.m_uint16);
+            }
+            case ElementType::Bit32:
+            {
+                return stringmanip::toBitString(data.m_uint32);
+            }
+            case ElementType::Bit64:
+            {
+                return stringmanip::toBitString(data.m_uint64);
+            }
+            case ElementType::Hex8:
+            {
+                return stringmanip::toHexString(data.m_uint8);
+            }
+            case ElementType::Hex16:
+            {
+                return stringmanip::toHexString(data.m_uint16);
+            }
+            case ElementType::Hex32:
+            {
+                return stringmanip::toHexString(data.m_uint32);
+            }
+            case ElementType::Hex64:
+            {
+                return stringmanip::toHexString(data.m_uint64);
+            }
             default:
             {
                 throw std::runtime_error("Unknown data type");
@@ -205,21 +237,29 @@ struct Parameter
                 break;
             }
             case ElementType::UInt8:
+            case ElementType::Bit8:
+            case ElementType::Hex8:
             {
                 rw.rw_uint8(this->data.m_uint8);
                 break;
             }
             case ElementType::UInt16:
+            case ElementType::Bit16:
+            case ElementType::Hex16:
             {
                 rw.rw_uint16(this->data.m_uint16);
                 break;
             }
             case ElementType::UInt32:
+            case ElementType::Bit32:
+            case ElementType::Hex32:
             {
                 rw.rw_uint32(this->data.m_uint32);
                 break;
             }
             case ElementType::UInt64:
+            case ElementType::Bit64:
+            case ElementType::Hex64:
             {
                 rw.rw_uint64(this->data.m_uint64);
                 break;

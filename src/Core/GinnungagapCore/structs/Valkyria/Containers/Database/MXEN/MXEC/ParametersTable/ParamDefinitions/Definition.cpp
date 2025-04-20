@@ -177,6 +177,46 @@ MXEParameterSetDefinition::MXEParameterSetDefinition(const nlohmann::ordered_jso
                         size += 16;
                         dtype = ElementType::FloatColor;
                     }
+                    else if (str_dtype == "bit8")
+                    {
+                        size += 1;
+                        dtype = ElementType::Bit8;
+                    }
+                    else if (str_dtype == "bit16")
+                    {
+                        size += 2;
+                        dtype = ElementType::Bit16;
+                    }
+                    else if (str_dtype == "bit32")
+                    {
+                        size += 4;
+                        dtype = ElementType::Bit32;
+                    }
+                    else if (str_dtype == "bit64")
+                    {
+                        size += 8;
+                        dtype = ElementType::Bit64;
+                    }
+                    else if (str_dtype == "hex8")
+                    {
+                        size += 1;
+                        dtype = ElementType::Hex8;
+                    }
+                    else if (str_dtype == "hex16")
+                    {
+                        size += 2;
+                        dtype = ElementType::Hex16;
+                    }
+                    else if (str_dtype == "hex32")
+                    {
+                        size += 4;
+                        dtype = ElementType::Hex32;
+                    }
+                    else if (str_dtype == "hex64")
+                    {
+                        size += 8;
+                        dtype = ElementType::Hex64;
+                    }
                     else
                         throw std::runtime_error("Unknown parameter element type '" + str_dtype + "' in parameter definition " + name);
 

@@ -35,7 +35,15 @@ enum class ElementType : uint8_t
     SJISString=17,
     UTF8String=18,
     CharColor=19,
-    FloatColor=20
+    FloatColor=20,
+    Bit8=21,
+    Bit16=22,
+    Bit32=23,
+    Bit64=24,
+    Hex8=25,
+    Hex16=26,
+    Hex32=27,
+    Hex64=28
 };
 
 template<typename T>

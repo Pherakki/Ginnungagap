@@ -253,6 +253,86 @@ void setParameterData(const std::string& s, Parameter& elem, const std::string& 
             }
             break;
         }
+        case ElementType::Bit8:
+        {
+            if (s.substr(0,2) != "0b")
+            {
+                std::cout << errmsg << "is a bit-string, but does not start with '0b'" << std::endl;
+                exit(1);
+            }
+            elem.data.m_uint8 = stringmanip::fromBitString8(s);
+            break;
+        }
+        case ElementType::Bit16:
+        {
+            if (s.substr(0,2) != "0b")
+            {
+                std::cout << errmsg << "is a bit-string, but does not start with '0b'" << std::endl;
+                exit(1);
+            }
+            elem.data.m_uint16 = stringmanip::fromBitString16(s);
+            break;
+        }
+        case ElementType::Bit32:
+        {
+            if (s.substr(0,2) != "0b")
+            {
+                std::cout << errmsg << "is a bit-string, but does not start with '0b'" << std::endl;
+                exit(1);
+            }
+            elem.data.m_uint32 = stringmanip::fromBitString32(s);
+            break;
+        }
+        case ElementType::Bit64:
+        {
+            if (s.substr(0,2) != "0b")
+            {
+                std::cout << errmsg << "is a bit-string, but does not start with '0b'" << std::endl;
+                exit(1);
+            }
+            elem.data.m_uint64 = stringmanip::fromBitString64(s);
+            break;
+        }
+        case ElementType::Hex8:
+        {
+            if (s.substr(0,2) != "0x")
+            {
+                std::cout << errmsg << "is a hex-string, but does not start with '0x'" << std::endl;
+                exit(1);
+            }
+            elem.data.m_uint8 = stringmanip::fromHexString8(s);
+            break;
+        }
+        case ElementType::Hex16:
+        {
+            if (s.substr(0,2) != "0x")
+            {
+                std::cout << errmsg << "is a hex-string, but does not start with '0x'" << std::endl;
+                exit(1);
+            }
+            elem.data.m_uint16 = stringmanip::fromHexString16(s);
+            break;
+        }
+        case ElementType::Hex32:
+        {
+            if (s.substr(0,2) != "0x")
+            {
+                std::cout << errmsg << "is a hex-string, but does not start with '0x'" << std::endl;
+                exit(1);
+            }
+            elem.data.m_uint32 = stringmanip::fromHexString32(s);
+            break;
+        }
+        case ElementType::Hex64:
+        {
+            if (s.substr(0,2) != "0x")
+            {
+                std::cout << errmsg << "is a hex-string, but does not start with '0x'" << std::endl;
+                exit(1);
+            }
+            elem.data.m_uint64 = stringmanip::fromHexString64(s);
+            break;
+        }
     }
 }
 

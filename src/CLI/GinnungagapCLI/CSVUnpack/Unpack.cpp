@@ -100,6 +100,46 @@ static void dumpParamData(std::ofstream& stream, const ParameterSet::Parameters&
                 stream << '\"' << c[0] << " " << c[1] << " " << c[2] << " " << c[3] << '\"';
                 break;
             }
+            case ElementType::Bit8:
+            {
+                stream << stringmanip::toBitString(elem.data.m_uint8);
+                break;
+            }
+            case ElementType::Bit16:
+            {
+                stream << stringmanip::toBitString(elem.data.m_uint16);
+                break;
+            }
+            case ElementType::Bit32:
+            {
+                stream << stringmanip::toBitString(elem.data.m_uint32);
+                break;
+            }
+            case ElementType::Bit64:
+            {
+                stream << stringmanip::toBitString(elem.data.m_uint64);
+                break;
+            }
+            case ElementType::Hex8:
+            {
+                stream << stringmanip::toHexString(elem.data.m_uint8);
+                break;
+            }
+            case ElementType::Hex16:
+            {
+                stream << stringmanip::toHexString(elem.data.m_uint16);
+                break;
+            }
+            case ElementType::Hex32:
+            {
+                stream << stringmanip::toHexString(elem.data.m_uint32);
+                break;
+            }
+            case ElementType::Hex64:
+            {
+                stream << stringmanip::toHexString(elem.data.m_uint64);
+                break;
+            }
         }
     }
     stream << std::endl;

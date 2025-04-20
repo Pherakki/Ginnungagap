@@ -1,5 +1,8 @@
 #pragma once
 
+#include <bitset>
+#include <sstream>
+#include <iomanip>
 #include <string>
 #include <vector>
 #ifdef __linux__
@@ -39,7 +42,59 @@ namespace stringmanip
                 static_assert(side < SectionSide::Left || side > SectionSide::Right, "Unhandled SectionSide direction");
             return s.substr(start, count);
         }
+
+        template<size_t width>
+        consteval auto bitmask()
+        {
+            uint64_t mask=0;
+            for (int i=0; i < width; ++i)
+                mask |= (1 << i);
+            return mask;
+        }
+
+        template<typename T>
+        std::string toHexString(T v)
+        {
+            std::stringstream stream;
+            stream << "0x" << std::hex << std::setw(sizeof(T)*2) << std::setfill('0') << v;
+            return stream.str();
+        }
+
+        template<typename T>
+        T fromHexString(const std::string& v)
+        {
+            return std::stoull(v.c_str(), nullptr, 16);
+        }
+
+        template<typename T>
+        std::string toBitString(T v)
+        {
+            return "0b" + std::bitset<sizeof(T)*8>(v).to_string();
+        }
+
+        template<typename T>
+        T fromBitString(const std::string& v)
+        {
+            return std::stoull(&v.c_str()[2], nullptr, 2);
+        }
     }
+
+    inline std::string toBitString(uint8_t v)  { return __Impl::toBitString(v); }
+    inline std::string toBitString(uint16_t v) { return __Impl::toBitString(v); }
+    inline std::string toBitString(uint32_t v) { return __Impl::toBitString(v); }
+    inline std::string toBitString(uint64_t v) { return __Impl::toBitString(v); }
+    inline std::string toHexString(uint8_t v)  { return __Impl::toHexString(v); }
+    inline std::string toHexString(uint16_t v) { return __Impl::toHexString(v); }
+    inline std::string toHexString(uint32_t v) { return __Impl::toHexString(v); }
+    inline std::string toHexString(uint64_t v) { return __Impl::toHexString(v); }
+    inline uint8_t  fromBitString8 (const std::string& v) { return __Impl::fromBitString<uint8_t >(v); }
+    inline uint16_t fromBitString16(const std::string& v) { return __Impl::fromBitString<uint16_t>(v); }
+    inline uint32_t fromBitString32(const std::string& v) { return __Impl::fromBitString<uint32_t>(v); }
+    inline uint64_t fromBitString64(const std::string& v) { return __Impl::fromBitString<uint64_t>(v); }
+    inline uint8_t  fromHexString8 (const std::string& v) { return __Impl::fromHexString<uint8_t >(v); }
+    inline uint16_t fromHexString16(const std::string& v) { return __Impl::fromHexString<uint16_t>(v); }
+    inline uint32_t fromHexString32(const std::string& v) { return __Impl::fromHexString<uint32_t>(v); }
+    inline uint64_t fromHexString64(const std::string& v) { return __Impl::fromHexString<uint64_t>(v); }
 
     template<SectionSide side>
     std::string section(const std::string& s, const std::string& delimiter) 
