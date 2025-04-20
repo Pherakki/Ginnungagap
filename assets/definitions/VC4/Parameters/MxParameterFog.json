@@ -2,11 +2,11 @@
     "struct":
     [
         {
-            "color": "<color128",
-            "unknown_0x10": "<float32",
-            "unknown_0x14": "<float32",
-            "unknown_0x18": "<float32",
-            "unknown_0x1C": "<float32"
+            "0x00": {"type": "<color128", "label": "color" },
+            "0x10": {"type": "<float32",  "label": "" },
+            "0x14": {"type": "<float32",  "label": "" },
+            "0x18": {"type": "<float32",  "label": "" },
+            "0x1C": {"type": "<float32",  "label": "" }
         }
     ]
 }

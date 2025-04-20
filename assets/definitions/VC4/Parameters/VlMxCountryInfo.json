@@ -2,9 +2,9 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<sjis_string"
+            "0x00"   : {"type": "<int32",       "label": "ID" },
+            "0x04"   : {"type": "<int32",       "label": "" },
+            "0x08"   : {"type": "<sjis_string", "label": "XLB_Name" }
         }
     ]
 }

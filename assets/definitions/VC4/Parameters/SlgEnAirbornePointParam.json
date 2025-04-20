@@ -2,10 +2,10 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<int32",
-            "unknown_0x0C"   : "<float32",
+            "0x00"           : {"type": "<int32", "label": "" },
+            "0x04"           : {"type": "<int32", "label": "" },
+            "0x08"           : {"type": "<int32", "label": "" },
+            "0x0C"           : {"type": "<int32", "label": "" },
             "Pos x"          : "<float32",
             "Pos y"          : "<float32",
             "Pos z"          : "<float32",
@@ -22,18 +22,18 @@
             "textures"       : "<asset",
             "animation"      : "<asset",
             "material anim"  : "<asset",
-            "unknown_0x60"   : "<int32",
-            "unknown_0x64"   : "<int32",
-            "unknown_0x68"   : "<int32",
-            "unknown_0x6C"   : "<int32",
-            "unknown_0x70"   : "<int32",
-            "unknown_0x74"   : "<int32",
-            "unknown_0x78"   : "<int32",
-            "unknown_0x7C"   : "<int32",
-            "unknown_0x80"   : "<int32",
-            "unknown_0x84"   : "<int32",
-            "unknown_0x88"   : "<int32",
-            "unknown_0x8C"   : "<int32"
+            "0x60"           : {"type": "<int32", "label": "" },
+            "0x64"           : {"type": "<int32", "label": "" },
+            "0x68"           : {"type": "<int32", "label": "" },
+            "0x6C"           : {"type": "<int32", "label": "UnitID" },
+            "0x70"           : {"type": "<int32", "label": "" },
+            "0x74"           : {"type": "<int32", "label": "" },
+            "0x78"           : {"type": "<int32", "label": "" },
+            "0x7C"           : {"type": "<int32", "label": "" },
+            "0x80"           : {"type": "<int32", "label": "isXO" },
+            "0x84"           : {"type": "<int32", "label": "" },
+            "0x88"           : {"type": "<int32", "label": "" },
+            "0x8C"           : {"type": "<int32", "label": "AirPathId" }
         }
     ],
     "assets":

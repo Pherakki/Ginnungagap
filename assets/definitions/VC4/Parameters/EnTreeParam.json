@@ -2,10 +2,10 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<int32",
-            "unknown_0x0C"   : "<float32",
+            "0x00"           : {"type": "<int32", "label": "" },
+            "0x04"           : {"type": "<int32", "label": "" },
+            "0x08"           : {"type": "<int32", "label": "" },
+            "0x0C"           : {"type": "<int32", "label": "" },
             "Pos x"          : "<float32",
             "Pos y"          : "<float32",
             "Pos z"          : "<float32",
@@ -23,8 +23,8 @@
             "animation"      : "<asset",
             "material anim"  : "<asset",
             "cvd"            : "<asset",
-            "unknown_0x68"   : "<int32",
-            "unknown_0x6C"   : "<int32"
+            "0x68"           : {"type": "<int32", "label": "" },
+            "0x6C"           : {"type": "<int32", "label": "" }
         }
     ],
     "assets":

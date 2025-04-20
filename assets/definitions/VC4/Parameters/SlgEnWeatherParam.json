@@ -2,7 +2,7 @@
     "struct":
     [
         {
-            "unknown_0x00": "<int32"
+            "0x00": {"type": "<int32", "label": "" }
         }
     ]
 }

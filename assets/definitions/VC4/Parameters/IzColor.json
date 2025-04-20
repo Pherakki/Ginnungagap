@@ -2,7 +2,7 @@
     "struct":
     [
         {
-            "color":   "<color128"
+            "0x00":   {"type": "<color128", "label": "color" }
         }
     ]
 }

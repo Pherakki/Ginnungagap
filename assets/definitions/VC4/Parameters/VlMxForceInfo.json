@@ -2,17 +2,17 @@
     "struct":
     [
         {
-            "unknown_0x00"   : "<int32",
-            "unknown_0x04"   : "<int32",
-            "unknown_0x08"   : "<sjis_string",
-            "unknown_0x10"   : "<int32",
-            "unknown_0x14"   : "<int32",
-            "unknown_0x18"   : "<int32",
-            "unknown_0x1C"   : "<int32",
-            "unknown_0x20"   : "<int32",
-            "unknown_0x24"   : "<int32",
-            "padding_0x28"   : "<int32",
-            "padding_0x2C"   : "<int32"
+            "0x00"   : {"type": "<int32",       "label": "Force ID" },
+            "0x04"   : {"type": "<int32",       "label": "Faction" },
+            "0x08"   : {"type": "<sjis_string", "label": "XLB_Name" },
+            "0x10"   : {"type": "<int32",       "label": "" },
+            "0x14"   : {"type": "<int32",       "label": "Unit ID ?" },
+            "0x18"   : {"type": "<int32",       "label": "Unit ID ?" },
+            "0x1C"   : {"type": "<int32",       "label": "Unit ID ?" },
+            "0x20"   : {"type": "<int32",       "label": "Unit ID ?" },
+            "0x24"   : {"type": "<int32",       "label": "Unit ID ?" },
+            "0x28"   : {"type": "<int32",       "label": "Unit ID ?" },
+            "0x2C"   : {"type": "<int32",       "label": "" }
         }
     ]
 }
