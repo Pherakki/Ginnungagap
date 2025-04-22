@@ -1,6 +1,7 @@
 #include "CSVUnpack/Unpack.hpp"
 #include "CSVUnpack/Pack.hpp"
 #include "CSVUnpack/MXEInfo.hpp"
+#include "CSVUnpack/MXEUtil.hpp"
 #include "GinnungagapCore/utils/Paths.hpp"
 #include "GinnungagapCore/structs/Valkyria/Filetypes/MXE/BinaryVC4.hpp"
 #include "GinnungagapCore/structs/Valkyria/Containers/Database/MXEN/MXEC/ParametersTable/ParamDefinitions/Load.hpp"
@@ -36,6 +37,31 @@ public:
                     exit(1);
                 }
                 this->src_dir = std::filesystem::path(argv[2]);
+                return;
+            }
+            else if (mode == "--next-entity-id")
+            {
+                this->next_entity_id = true;
+                if (argc < 3)
+                {
+                    std::cout << "Error: Missing input directory" << std::endl;
+                    CmdParser::printUsage();
+                    exit(1);
+                }
+                this->src_dir = std::filesystem::path(argv[2]);
+                return;
+            }
+            else if (mode == "--add-entity")
+            {
+                this->add_entity = true;
+                if (argc < 4)
+                {
+                    std::cout << "Error: Missing input directory or entity type" << std::endl;
+                    CmdParser::printUsage();
+                    exit(1);
+                }
+                this->src_dir = std::filesystem::path(argv[2]);
+                this->ent_type = std::string(argv[3]);
                 return;
             }
             else
@@ -118,7 +144,7 @@ public:
 
     static void printUsage()
     {
-        std::cout << "Usage: <-u/-p/--unpack/--pack/--next-id> [-r] [-t] <input file/directory> <output file/directory>\n" << std::endl;
+        std::cout << "Usage: <-u/-p/--unpack/--pack/--next-id/--next-entity-id/--add-entity> [-r] [-t] <input file/directory> <output file/directory>\n" << std::endl;
         std::cout << "    -u <input file> <output directory>              : Unpacks a single MXE file to a directory of CSVs, written to <output directory>" << std::endl;
         std::cout << "    --unpack <input file> <output directory>        : Unpacks a single MXE file to a directory of CSVs, written to <output directory>" << std::endl;
         std::cout << "    -u -r <input directory> <output directory>      : Unpacks a directory of MXE files to CSVs, written to <output directory>" << std::endl;
@@ -128,15 +154,20 @@ public:
         std::cout << "    -p -r <input directory> <output directory>      : Packs multiple directories containing CSV files to corresponding MXE files, written to <output directory>" << std::endl;
         std::cout << "    --pack -r <input directory> <output directory>  : Packs multiple directories containing CSV files to corresponding MXE files, written to <output directory>" << std::endl;
         std::cout << "    --next-id <input directory>                     : Returns the next available parameter set ID." << std::endl;
+        std::cout << "    --next-entity-id <input directory>              : Returns the next available entity ID." << std::endl;
+        std::cout << "    --add-entity <input directory> entity-type-name : Add dummy entity and its params to CSVs." << std::endl;
         std::cout << "    Add -t for 'terse mode'; where types are written to CSV as single-character keys." << std::endl;
     }
 
 public:
     bool pack=false;
-    bool unpack = false;
+    bool unpack=false;
     bool recursive=false;
     bool terse=false;
     bool next_id=false;
+    bool next_entity_id=false;
+    bool add_entity=false;
+    std::string ent_type;
     std::filesystem::path src_dir;
     std::filesystem::path dest_dir;
 };
@@ -247,15 +278,36 @@ int main(int argc, char** argv)
 
 
     ParameterDefMap params_defmap;
-    loadParameterDefinitions(params_defmap, getexepath().parent_path()/"assets"/"definitions"/"VC4"/"Parameters");
-    
     EntityDefMap entity_defmap;
-    loadEntityDefinitions(entity_defmap, getexepath().parent_path()/"assets"/"definitions"/"VC4"/"Entities");
+    //do not die silently if config jsons have errors
+    try 
+    {
+        loadParameterDefinitions(params_defmap, getexepath().parent_path() / "assets" / "definitions" / "VC4" / "Parameters");
+        loadEntityDefinitions(entity_defmap, getexepath().parent_path() / "assets" / "definitions" / "VC4" / "Entities");
+        
+    }
+    catch (const nlohmann::json::parse_error& e) {
+        std::cout << "assets/definitions/VC4 JSON parsing error: " << e.what() << std::endl
+                  << "exception id: " << e.id << std::endl
+                  << "byte position of error: " << e.byte << std::endl;
+        return 1;
+    }
+
     FlatEntityDefMap flat_entity_defmap = flattenEntityDefinitions(entity_defmap);
 
     if (config.next_id)
     {
-        std::cout << "Next ID: " << nextAvailableID(config.src_dir) << std::endl;
+        std::cout << "Next ID: " << nextAvailableParamID(config.src_dir) << std::endl;
+        return 0;
+    }
+    if (config.next_entity_id)
+    {
+        std::cout << "Next entity ID: " << nextAvailableEntityID(config.src_dir) << std::endl;
+        return 0;
+    }
+    if (config.add_entity)
+    {
+        addEntityToCSVUnpack(config.src_dir, config.ent_type, flat_entity_defmap);
         return 0;
     }
 

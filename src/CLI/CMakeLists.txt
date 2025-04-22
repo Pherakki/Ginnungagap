@@ -12,7 +12,7 @@ add_executable(${PROJECT_NAME}
     GinnungagapCLI/CSVUnpack/Unpack.cpp
     GinnungagapCLI/CSVUnpack/Pack.cpp
     GinnungagapCLI/CSVUnpack/MXEInfo.cpp
-)
+ "GinnungagapCLI/CSVUnpack/MXEUtil.cpp")
 
 # Done
 # Allow CMake to build libraries
